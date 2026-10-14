@@ -1,0 +1,37 @@
+name: Tâche du portfolio
+description: Planifier un livrable avec des critères vérifiables.
+title: "[Tâche] "
+body:
+  - type: textarea
+    id: objectif
+    attributes:
+      label: Objectif et résultat attendu
+      description: Quel comportement ou livrable doit exister à la fin ?
+    validations:
+      required: true
+  - type: textarea
+    id: criteres
+    attributes:
+      label: Critères d’acceptation
+      description: Ajouter une liste de contrôles observables.
+      value: |
+        - [ ] Livrable réalisé
+        - [ ] Résultat vérifié
+        - [ ] Documentation mise à jour si nécessaire
+    validations:
+      required: true
+  - type: textarea
+    id: dependances
+    attributes:
+      label: Dépendances et données nécessaires
+      description: Ajouter les liens des issues et les sources requises.
+  - type: input
+    id: echeance
+    attributes:
+      label: Échéance proposée
+      placeholder: AAAA-MM-JJ
+  - type: input
+    id: charge
+    attributes:
+      label: Charge estimée en heures
+      description: La charge de travail est différente de la durée calendaire.
