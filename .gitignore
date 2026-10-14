@@ -1,0 +1,24 @@
+# Configuration locale et secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Environnements Python et caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Dépendances et fichiers locaux
+node_modules/
+.DS_Store
+Thumbs.db
+.idea/
+
+# Exports de base et données privées
+*.dump
+*.backup
+data/private/
