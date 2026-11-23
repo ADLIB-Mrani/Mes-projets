@@ -1,0 +1,7 @@
+"use client";
+import Link from "next/link";
+import {usePathname} from "next/navigation";
+import {useState} from "react";
+import {GitBranch as Github,Menu,X} from "lucide-react";
+const links=[{href:"/",name:"Accueil"},{href:"/projets",name:"Projets"},{href:"/competences",name:"Compétences"},{href:"/alternance",name:"Alternance"},{href:"/parcours",name:"Parcours"}];
+export function Navigation(){const path=usePathname();const[open,setOpen]=useState(false);return <header className="site-header"><div className="container header-inner"><Link href="/" className="brand" onClick={()=>setOpen(false)} aria-label="Mohamed Mrani Alaoui, accueil"><span className="brand-monogram">M<span>.</span></span><span>MOHAMED MRANI ALAOUI<small>SCIENCE DES DONNÉES</small></span></Link><button className="menu-toggle" aria-controls="site-navigation" aria-expanded={open} aria-label={open?"Fermer le menu":"Ouvrir le menu"} onClick={()=>setOpen(!open)}>{open?<X size={24}/>:<Menu size={24}/>}</button><nav id="site-navigation" className={open?"navigation open":"navigation"} aria-label="Navigation principale">{links.map(l=>{const active=l.href==="/"?path==="/":path.startsWith(l.href);return <Link href={l.href} key={l.href} className={active?"active":""} aria-current={active?"page":undefined} onClick={()=>setOpen(false)}>{l.name}</Link>})}<a className="github-nav" href="https://github.com/ADLIB-Mrani" target="_blank" rel="noreferrer"><Github size={18}/><span>GitHub</span></a></nav></div></header>}

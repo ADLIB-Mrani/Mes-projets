@@ -1,5 +1,7 @@
 # Architecture et modèle relationnel
 
+> Conception initiale. La version du 23 novembre 2026 utilise React/TypeScript avec Vinext et PostgreSQL/Supabase. Voir le README pour l’exécution actuelle ; la proposition Flask ci-dessous reste la trace de conception. 
+
 Proposition pour un portfolio individuel exécuté localement. Le langage serveur du cours reste à confirmer avant l’implémentation.
 
 ## Architecture

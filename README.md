@@ -1,117 +1,64 @@
-# Mes projets — Portfolio BUT Science des données
+# Portfolio — Mohamed Mrani Alaoui
 
-Portfolio de trois années de BUT Science des données à l’Université Marie et Louis Pasteur. Le site présentera les projets, les compétences C1 à C4, les outils techniques, l’alternance et des indicateurs calculés à partir des données renseignées.
+Application du portfolio de BUT Science des données à l’Université Marie et Louis Pasteur. Elle présente les projets documentés, les compétences C1 à C4, le parcours et un espace pour l’alternance.
 
-**État au 14 octobre 2026 : kit de conception, de données et de gestion de projet. Le serveur et le site fonctionnel restent à développer.** Ce dépôt contient les documents préparatoires, les maquettes et les scripts PostgreSQL. Les projets réels, les heures de formation et les apprentissages acquis restent à renseigner.
+Site déployé (accès privé) : [https://portfolio-mohamed-mrani.animatedbraid256.chatgpt.site](https://portfolio-mohamed-mrani.animatedbraid256.chatgpt.site).
 
-Dépôt : [ADLIB-Mrani/Mes-projets](https://github.com/ADLIB-Mrani/Mes-projets).
+## Version du 23 novembre 2026
 
-## Objectif
+- Pages d’accueil, projets, détail de projet, compétences, alternance, parcours et documentation.
+- Filtres combinables par recherche, année, semestre, compétence et outil, conservés dans l’URL.
+- PostgreSQL hébergé sur Supabase : les 11 tables du modèle initial, les vues et la lecture des seuls projets publiés.
+- Les valeurs inconnues restent « À renseigner ». Les heures ne sont pas multipliées par les associations entre projets, outils et compétences.
+- Une seule réalisation est actuellement documentée : le portfolio lui-même, à partir du dépôt réel. Les autres projets, l’employeur, les volumes de formation et les preuves pédagogiques restent à compléter.
 
-Donner à un recruteur ou à une formation une vue claire du parcours : pour chaque projet, expliquer le problème, les méthodes, la contribution personnelle, le résultat et les preuves. Respecter les exigences pédagogiques de planning, de maquette préalable, de commits réguliers et de documentation.
+## Technologies
 
-## Fonctionnalités prévues
+React, TypeScript, CSS, Vinext (API compatible Next.js), Cloudflare Workers et PostgreSQL/Supabase. Hébergement avec Sites. Le serveur interroge une vue Supabase en lecture seule ; aucune clé secrète de service n’est utilisée dans le navigateur.
 
-- **Accueil** : présentation du parcours, sélection de projets et statistiques globales.
-- **Projets** : liste filtrable par semestre, compétence et outil ; fiche détaillée avec résultats et preuves.
-- **Compétences** : C1 à C4, outils techniques et apprentissages critiques documentés.
-- **Alternance** : missions, contributions et bilan professionnel.
-- **Statistiques** : heures de formation, répartition par compétence et nombre de projets publiés, calculés à partir de données sourcées.
-- **Affichage responsive** : navigation utilisable sur ordinateur et téléphone.
+## Exécuter localement
 
-| Compétence | Intitulé |
-| --- | --- |
-| C1 | Traiter des données à des fins décisionnelles |
-| C2 | Analyser statistiquement les données |
-| C3 | Valoriser une production dans un contexte professionnel |
-| C4 | Développer un outil décisionnel |
-
-## Aperçu de la maquette
-
-![Maquette de l’accueil du portfolio sur ordinateur et mobile](docs/maquettes/portfolio.png)
-
-La maquette représente l’interface proposée. Elle ne constitue pas encore un site fonctionnel.
-
-## Documents disponibles
-
-- [Outils recommandés](docs/OUTILS.md) et bénéfices utiles du Student Developer Pack.
-- [Planning](docs/PLANNING.md), séances encadrées et [Gantt prévisionnel en PNG](docs/gantt.png).
-- [Maquette ordinateur et mobile](docs/maquettes/portfolio.svg), également disponible [en PNG](docs/maquettes/portfolio.png).
-- [Charte graphique](docs/CHARTE.md) et [contenu des pages](docs/CONTENU.md).
-- [Architecture et relations PostgreSQL](docs/ARCHITECTURE.md).
-- [Organisation GitHub](docs/GITHUB.md) et [tâches à créer](docs/ISSUES.md).
-- [Journal d’avancement](AVANCEMENT.md) à maintenir pendant le projet.
-- Scripts SQL dans `database/` et modèle de tâche dans `.github/ISSUE_TEMPLATE/`.
-
-| Emplacement | Contenu |
-| --- | --- |
-| `README.md` | Présentation, prise en main et limites du projet |
-| `AVANCEMENT.md` | Journal des étapes réelles et décisions |
-| `docs/` | Planning, Gantt, charte, architecture, contenus et organisation GitHub |
-| `docs/maquettes/` | Maquette de l’accueil aux formats SVG et PNG |
-| `database/` | Schéma de 11 tables, données de référence et vues statistiques |
-| `.github/` | Formulaire de tâche et modèle de pull request |
-
-## Choix techniques proposés
-
-HTML sémantique, CSS responsive, JavaScript pour les filtres et graphiques ; Python/Flask et templates Jinja pour le serveur ; PostgreSQL et psycopg pour les données. Les requêtes seront paramétrées. Si le cours impose PHP ou un autre langage serveur, adapter cette couche avant d’implémenter ; le modèle de données reste utilisable.
-
-Le navigateur appelle le serveur, qui interroge PostgreSQL et rend le HTML. La base n’est jamais appelée directement depuis le JavaScript du navigateur. GitHub héberge le code et la documentation ; le projet pourra s’exécuter localement.
-
-## Données et origine
-
-- C1 à C4 : intitulés repris du cahier des charges joint.
-- Semestres 1 à 6 : structure du BUT.
-- Projets, résultats, durées, outils réellement utilisés : informations personnelles à collecter.
-- Volumes de formation : maquette pédagogique, syllabus ou relevé d’heures, avec source documentée.
-- Apprentissages critiques : référentiel officiel du parcours à importer ; aucun code ou intitulé n’est inventé.
-- Alternance : missions et livrables diffusables, à renseigner et à anonymiser si nécessaire.
-
-Le seed contient uniquement les quatre compétences et les six semestres. Les statistiques du portfolio ne doivent pas réutiliser les **28 h 30 de ce module projet** comme volume des trois années de BUT.
-
-## Récupérer le projet
+Prérequis : Node.js 22.13 ou version plus récente et npm.
 
 ```bash
-git clone https://github.com/ADLIB-Mrani/Mes-projets.git
-cd Mes-projets
+npm ci
+npm run dev
 ```
 
-Commencer par [le planning](docs/PLANNING.md), [l’architecture](docs/ARCHITECTURE.md) et [le journal d’avancement](AVANCEMENT.md). Pour consulter les documents, aucun environnement Python n’est nécessaire.
-
-## Préparer PostgreSQL
-
-Installer PostgreSQL avec ses outils `psql`/`createdb`, ou utiliser pgAdmin. Depuis un terminal configuré pour la connexion locale :
+Sans configuration Supabase, l’application présente le contenu de référence versionné. Pour connecter une base, renseigner les variables serveur `SUPABASE_URL` et `SUPABASE_PUBLISHABLE_KEY` dans la configuration locale du runtime. En production, elles sont enregistrées dans les variables d’environnement de Sites. Ne jamais ajouter les valeurs réelles au dépôt.
 
 ```bash
-createdb portfolio_sd
-psql -d portfolio_sd -v ON_ERROR_STOP=1 -f database/01-schema.sql
-psql -d portfolio_sd -v ON_ERROR_STOP=1 -f database/02-reference.sql
-psql -d portfolio_sd -v ON_ERROR_STOP=1 -f database/03-statistiques.sql
+npm test
+npx tsc --noEmit
+npm run build
 ```
 
-Adapter l’utilisateur et l’hôte avec les options PostgreSQL si nécessaire. Dans pgAdmin, créer une base vide puis exécuter les trois fichiers dans cet ordre avec le Query Tool. `01-schema.sql` est une création initiale : l’exécuter une fois dans une base neuve. Le seed de référence et les vues peuvent être réexécutés.
+## Données PostgreSQL
 
-Ces commandes préparent la base ; il n’existe pas encore de commande de lancement du site. L’installation Python et les versions exactes des dépendances seront documentées lorsque l’application sera implémentée.
+Dans une base neuve, exécuter dans l’ordre les scripts de `database/`. Les trois premiers fichiers conservent le modèle initial. `04-supabase.sql` ajoute RLS et une vue publique avec `security_invoker`, puis `05-projet-portfolio.sql` documente le projet réel du portfolio. Les identifiants générés sont retrouvés par leurs clés métier.
 
-## Versionnement et suivi
+L’accès visiteur est limité à la lecture. Les projets non publiés et leurs relations sont exclus ; les écritures anonymes sont interdites. Les apprentissages validés restent inconnus tant que le référentiel et les preuves ne sont pas renseignés.
 
-Les fichiers de ce kit constituent la première étape du projet. Suivre [la procédure Git](docs/GITHUB.md) pour les prochaines étapes : créer une branche, réaliser une modification cohérente, vérifier le résultat, puis faire un commit explicite et pousser la branche.
+## Routes utiles
 
-Les [tâches préparées](docs/ISSUES.md) peuvent être créées dans [GitHub Issues](https://github.com/ADLIB-Mrani/Mes-projets/issues), puis ajoutées à un tableau GitHub Projects. Aucun tableau Projects ni aucune issue n’a encore été créé pour ce kit. Mettre à jour `AVANCEMENT.md` après chaque séance et adapter le Gantt aux dates confirmées.
+| Route | Usage |
+| --- | --- |
+| `/` | Accueil |
+| `/projets` | Recherche et filtres |
+| `/projets/portfolio-but-sd` | Projet réel du portfolio |
+| `/competences` | Compétences et projets associés |
+| `/alternance` | Espace à compléter avec les contenus diffusables |
+| `/parcours` | Semestres et indicateurs sourcés |
+| `/documents` | Documents et preuves de conception |
+| `/api/portfolio` | Données publiées, sans identifiants de connexion |
+| `/api/health` | État du service et de la connexion de données |
 
-## Limites et validation
+## Documentation et limites
 
-- Identité affichée, coordonnées, projets et alternance à compléter.
-- Dates du Gantt proposées pour 2026, année supposée à partir de la date actuelle ; le document fourni ne précisait pas l’année. Dates du semestre 6 inconnues.
-- Schéma proposé pour un portfolio individuel ; pas de gestion multi-utilisateur ni de back-office à ce stade.
-- Contrôle structurel des documents, du SVG et du formulaire de tâche réalisé lors de la préparation. Les scripts n’ont pas été exécutés sur un serveur PostgreSQL dans cet environnement ; ce contrôle constitue le premier jalon technique à réaliser localement.
-- Les heures représentent les segments de formation effectivement saisis. Une couverture incomplète doit être affichée explicitement, sans extrapolation.
+La conception d’origine reste dans `docs/` et les étapes réelles dans `AVANCEMENT.md`. La première proposition de serveur Flask est conservée dans les documents historiques ; cette version utilise le runtime TypeScript compatible avec l’hébergement.
 
-## Critères pour la première version fonctionnelle
+Les tests vérifient les filtres, le masquage des projets privés, les valeurs inconnues et les liens externes. Des contrôles PostgreSQL exécutés avec le rôle `anon` vérifient la confidentialité, les privilèges d’écriture et les sommes horaires, avec des données de test annulées par transaction.
 
-- [ ] Accueil, projets, détail d’un projet, compétences et alternance alimentés par la base.
-- [ ] Filtrage des projets par année/semestre, compétence et outil.
-- [ ] Indicateurs sourcés, valeurs inconnues affichées « À renseigner ».
-- [ ] Navigation au clavier, affichage utilisable sur téléphone, textes lisibles.
-- [ ] Instructions de lancement reproductibles et contrôles SQL réalisés.
-- [ ] README, planning et avancement mis à jour avec les difficultés et décisions réelles.
+Le relais d’aperçu de l’environnement de préparation n’était pas disponible : la vérification visuelle locale n’a pas pu être effectuée. Le résultat du déploiement et les contrôles HTTP sont suivis séparément.
+
+Les documents et le code ont été préparés avec l’aide de ChatGPT. Les contenus pédagogiques et les contributions doivent être relus et adaptés par l’étudiant.

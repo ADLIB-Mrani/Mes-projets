@@ -54,3 +54,17 @@ Les documents ont été préparés avec l’aide de ChatGPT. Ils doivent être c
 - Difficulté rencontrée :
 - Modification du planning et raison :
 - Prochaine action :
+
+## 23 novembre 2026 — Application et déploiement
+
+- Création des pages React/TypeScript et de la navigation responsive à partir de la charte et du cahier des charges.
+- Ajout de la recherche et des filtres, du détail des projets, des compétences, de l’alternance et des indicateurs.
+- Création du projet PostgreSQL gratuit `portfolio-but-sd` dans l’organisation choisie par l’étudiant, en région Paris.
+- Installation des 11 tables, des références, des vues et des politiques de lecture des projets publiés.
+- Premier projet renseigné : le portfolio réel, avec son dépôt et ses documents ; aucun autre projet ni volume de formation inventé.
+- Contrôles PostgreSQL réussis : masquage d’un projet privé, refus des écritures anonymes, calcul des heures sans double comptage. Les données de test ont été annulées par transaction.
+- Quatre tests fonctionnels réussis : confidentialité, filtres combinés, inconnues et liens externes. Contrôle TypeScript réalisé.
+- Limite de l’environnement : relais d’aperçu indisponible. La vérification visuelle locale est restée non effectuée.
+
+- Publication confirmée : https://portfolio-mohamed-mrani.animatedbraid256.chatgpt.site (accès privé).
+- Contrôles HTTP après déploiement : pages et médias accessibles, API connectée à Supabase, projet inconnu en erreur 404. Les feuilles de style sont accessibles.
