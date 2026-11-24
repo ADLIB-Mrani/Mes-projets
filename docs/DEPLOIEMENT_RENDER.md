@@ -2,23 +2,25 @@
 
 ## État au 24 novembre 2026
 
-La version Node.js est compilée et vérifiée localement avec la base Supabase existante. Aucun service Render n’a encore été créé : l’espace de travail de destination doit être identifié. Aucune adresse publique Render n’est annoncée avant confirmation du déploiement.
+Le portfolio est publié sur [https://portfolio-mohamed-mrani.onrender.com](https://portfolio-mohamed-mrani.onrender.com), accessible sans compte ChatGPT et connecté à la base Supabase existante. Le déploiement `dep-dc2lh4bncjis73dbdns0` est confirmé à l’état `live`, depuis le commit `63fa4bc3bf57e40b9011a4704ab5c28a6c6572b0`.
+
+Service : `srv-dc2lh43ncjis73dbdm7g`, espace de travail `My Workspace` confirmé par l’étudiant.
 
 ## Configuration du service
 
-Créer un seul **Web Service** à partir du dépôt GitHub. Le serveur est nécessaire pour lire les données Supabase et répondre aux routes `/api/portfolio` et `/api/health`.
+Un seul **Web Service** a été créé à partir du dépôt GitHub. Le serveur est nécessaire pour lire les données Supabase et répondre aux routes `/api/portfolio` et `/api/health`.
 
 | Paramètre | Valeur |
 | --- | --- |
 | Source | `https://github.com/ADLIB-Mrani/Mes-projets` |
 | Branche | `main` |
-| Nom proposé | `portfolio-mohamed-mrani` (selon disponibilité) |
+| Nom | `portfolio-mohamed-mrani` |
 | Runtime | Node.js |
 | Région | Frankfurt |
 | Compute plan | Free |
 | Build command | `npm ci --include=dev && npm test && npm run build:render` |
 | Start command | `npm run start:render` |
-| Déploiement automatique | Activé si le dépôt est lié au fournisseur GitHub |
+| Déploiement automatique | Activé à chaque commit de `main` |
 
 Le programme écoute sur `0.0.0.0` et lit `PORT` via le serveur Next.js. Les commandes initiales `npm run build` et `npm start` restent dédiées à Vinext/Cloudflare.
 
@@ -44,7 +46,7 @@ Sans ces deux variables Supabase, l’application affiche son contenu de référ
 4. Vérifier les pages, le détail du portfolio, les filtres et les médias. Un projet inconnu doit renvoyer 404.
 5. Ajouter l’adresse réellement obtenue au README.
 
-Les contrôles de préparation ont réussi : quatre tests, TypeScript, construction Next.js, construction Vinext, douze routes HTTP et feuille de style. La connexion Supabase a été vérifiée depuis le serveur Node.js de production local. Ces vérifications ne remplacent pas le contrôle du futur service Render.
+Les contrôles de préparation ont réussi : quatre tests, TypeScript, construction Next.js, construction Vinext, douze routes HTTP et feuille de style. La connexion Supabase a été vérifiée depuis le serveur Node.js de production local. Les contrôles sur l’adresse publique Render ont également réussi : pages, API, médias, CSS et fichiers JavaScript accessibles ; projet inconnu en 404 ; `/api/health` confirme `status: ok` et `storage: supabase`. Aucune erreur applicative n’a été renvoyée dans les journaux consultés après publication.
 
 L’offre Free peut mettre le serveur en veille après 15 minutes sans trafic ; une nouvelle visite peut alors nécessiter environ une minute de démarrage. Les données restent dans Supabase et ne dépendent pas du disque local du serveur.
 

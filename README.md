@@ -2,11 +2,11 @@
 
 Application du portfolio de BUT Science des données à l’Université Marie et Louis Pasteur. Elle présente les projets documentés, les compétences C1 à C4, le parcours et un espace pour l’alternance.
 
-Site déployé (accès privé) : [https://portfolio-mohamed-mrani.animatedbraid256.chatgpt.site](https://portfolio-mohamed-mrani.animatedbraid256.chatgpt.site).
+Site public : [https://portfolio-mohamed-mrani.onrender.com](https://portfolio-mohamed-mrani.onrender.com).
 
-La publication sur un hébergeur indépendant est préparée pour Render. Son adresse publique sera ajoutée après confirmation du déploiement. Voir [la procédure Render](docs/DEPLOIEMENT_RENDER.md).
+Le portfolio est hébergé sur Render et connecté à la base Supabase existante. L’accès ne nécessite pas de compte ChatGPT. Voir [la procédure Render](docs/DEPLOIEMENT_RENDER.md).
 
-## Version du 23 novembre 2026
+## Version du 24 novembre 2026
 
 - Pages d’accueil, projets, détail de projet, compétences, alternance, parcours et documentation.
 - Filtres combinables par recherche, année, semestre, compétence et outil, conservés dans l’URL.

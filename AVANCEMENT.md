@@ -76,4 +76,7 @@ Les documents ont été préparés avec l’aide de ChatGPT. Ils doivent être c
 - Lecture des variables de configuration via `process.env`, compatible avec Node.js et Cloudflare grâce au flag de compatibilité explicite.
 - Version Node.js Render fixée dans `.node-version` ; documentation des paramètres du service et des variables à renseigner.
 - Vérifications réussies : quatre tests, TypeScript, compilations Next.js et Vinext, douze routes HTTP et feuille de style sur le serveur Node.js de production local, API connectée à Supabase et projet inconnu en 404.
-- Publication Render non effectuée : aucun espace de travail n’est sélectionné dans le connecteur. Le choix de la destination reste à identifier avant création du service gratuit et vérification de sa véritable URL.
+- Publication Render effectuée après identification de l’espace `My Workspace` par l’étudiant : [https://portfolio-mohamed-mrani.onrender.com](https://portfolio-mohamed-mrani.onrender.com).
+- Service gratuit en région Frankfurt, lié à `main` avec déploiement automatique ; la base Supabase existante est conservée et aucune nouvelle base n’a été créée.
+- Déploiement `dep-dc2lh4bncjis73dbdns0` confirmé `live` depuis `63fa4bc3bf57e40b9011a4704ab5c28a6c6572b0`.
+- Contrôles sur l’URL publique : pages et médias accessibles, données Supabase en lecture, CSS et JavaScript accessibles, projet inconnu en 404. Aucun compte ChatGPT nécessaire pour consulter le site.
