@@ -68,3 +68,12 @@ Les documents ont été préparés avec l’aide de ChatGPT. Ils doivent être c
 
 - Publication confirmée : https://portfolio-mohamed-mrani.animatedbraid256.chatgpt.site (accès privé).
 - Contrôles HTTP après déploiement : pages et médias accessibles, API connectée à Supabase, projet inconnu en erreur 404. Les feuilles de style sont accessibles.
+
+## 24 novembre 2026 — Préparation de l’hébergement indépendant
+
+- Demande de l’étudiant : disposer d’une adresse hors de l’hébergement ChatGPT.
+- Ajout de `build:render` et `start:render` pour exécuter le même portfolio avec Next.js sur Node.js, sans changer sa base Supabase.
+- Lecture des variables de configuration via `process.env`, compatible avec Node.js et Cloudflare grâce au flag de compatibilité explicite.
+- Version Node.js Render fixée dans `.node-version` ; documentation des paramètres du service et des variables à renseigner.
+- Vérifications réussies : quatre tests, TypeScript, compilations Next.js et Vinext, douze routes HTTP et feuille de style sur le serveur Node.js de production local, API connectée à Supabase et projet inconnu en 404.
+- Publication Render non effectuée : aucun espace de travail n’est sélectionné dans le connecteur. Le choix de la destination reste à identifier avant création du service gratuit et vérification de sa véritable URL.

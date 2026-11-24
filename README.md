@@ -4,6 +4,8 @@ Application du portfolio de BUT Science des données à l’Université Marie et
 
 Site déployé (accès privé) : [https://portfolio-mohamed-mrani.animatedbraid256.chatgpt.site](https://portfolio-mohamed-mrani.animatedbraid256.chatgpt.site).
 
+La publication sur un hébergeur indépendant est préparée pour Render. Son adresse publique sera ajoutée après confirmation du déploiement. Voir [la procédure Render](docs/DEPLOIEMENT_RENDER.md).
+
 ## Version du 23 novembre 2026
 
 - Pages d’accueil, projets, détail de projet, compétences, alternance, parcours et documentation.
@@ -14,7 +16,7 @@ Site déployé (accès privé) : [https://portfolio-mohamed-mrani.animatedbraid2
 
 ## Technologies
 
-React, TypeScript, CSS, Vinext (API compatible Next.js), Cloudflare Workers et PostgreSQL/Supabase. Hébergement avec Sites. Le serveur interroge une vue Supabase en lecture seule ; aucune clé secrète de service n’est utilisée dans le navigateur.
+React, TypeScript, CSS et PostgreSQL/Supabase. Le même code fonctionne avec Next.js sur un serveur Node.js pour Render et avec Vinext sur Cloudflare Workers pour l’hébergement initial. Le serveur interroge une vue Supabase en lecture seule ; aucune clé secrète de service n’est utilisée dans le navigateur.
 
 ## Exécuter localement
 
@@ -25,13 +27,22 @@ npm ci
 npm run dev
 ```
 
-Sans configuration Supabase, l’application présente le contenu de référence versionné. Pour connecter une base, renseigner les variables serveur `SUPABASE_URL` et `SUPABASE_PUBLISHABLE_KEY` dans la configuration locale du runtime. En production, elles sont enregistrées dans les variables d’environnement de Sites. Ne jamais ajouter les valeurs réelles au dépôt.
+Sans configuration Supabase, l’application présente le contenu de référence versionné. Pour connecter une base, renseigner les variables serveur `SUPABASE_URL` et `SUPABASE_PUBLISHABLE_KEY` dans la configuration locale du runtime. En production, les enregistrer dans les variables d’environnement de l’hébergeur. Ne jamais ajouter les valeurs réelles au dépôt.
 
 ```bash
 npm test
 npx tsc --noEmit
 npm run build
 ```
+
+Pour construire et démarrer la version Node.js, avec les mêmes variables serveur :
+
+```bash
+npm run build:render
+npm run start:render
+```
+
+Le serveur écoute sur `0.0.0.0` et utilise la variable `PORT` fournie par l’hébergeur (3000 par défaut en local). La version Node.js pour Render est fixée dans `.node-version`.
 
 ## Données PostgreSQL
 
